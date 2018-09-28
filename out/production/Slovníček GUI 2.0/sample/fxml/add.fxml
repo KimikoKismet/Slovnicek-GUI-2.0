@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.add.AddController">
+   <children>
+      <Button fx:id="AddWordButton" layoutX="138.0" layoutY="224.0" mnemonicParsing="false" onAction="#AddWordButtonAction" text="Add Word" AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="240.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="BackButton" layoutX="309.0" layoutY="342.0" mnemonicParsing="false" onAction="#BackButtonAction" text="Back to menu" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="ChangeVocabularyButton" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" onAction="#ChangeVocabularyButtonAction" text="Change Vocabulary " textAlignment="JUSTIFY" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="74.0" layoutY="37.0" text="Word in foreign language:" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="78.0" layoutY="123.0" text="Word in native language:" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="130.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ForeignLanguageText" layoutX="73.0" layoutY="68.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="70.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="NativeLanguageText" layoutX="73.0" layoutY="155.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="165.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

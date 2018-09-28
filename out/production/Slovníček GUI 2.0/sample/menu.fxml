@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="ShowVocabularyButton" layoutX="103.0" layoutY="72.0" mnemonicParsing="false" onAction="#ShowVocabularyButtonAction" text="Show vocabulary" AnchorPane.topAnchor="70.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="ExamineYourselfButton" layoutX="102.0" layoutY="121.0" mnemonicParsing="false" onAction="#ExamineYourselfButtonAction" text="Examine yourself" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="ExitButton" layoutX="166.0" layoutY="320.0" mnemonicParsing="false" onAction="#ExitButtonAction" text="Exit" AnchorPane.bottomAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="AddWordButton" layoutX="140.0" layoutY="24.0" mnemonicParsing="false" onAction="#AddWordButtonAction" text="Add word" textAlignment="JUSTIFY" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
