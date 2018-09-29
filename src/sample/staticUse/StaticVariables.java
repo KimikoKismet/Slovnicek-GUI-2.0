@@ -1,4 +1,4 @@
-package sample;
+package sample.staticUse;
 
 /**
  * Created by IntelliJ IDEA.
@@ -6,8 +6,11 @@ package sample;
  * Date: 28. 9. 2018
  * Time: 20:50
  */
-public class Static {
+public class StaticVariables {
+
     public static String nextStage;
+    public static String nextStageForCreateVocabulary;
+
     public static String vocabularyName;
     public static String[] words;
     public static String typeOfExam;

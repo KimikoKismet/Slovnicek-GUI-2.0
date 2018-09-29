@@ -5,7 +5,7 @@ import javafx.scene.control.TextField;
 import sample.Constants;
 import sample.vocabulary.Vocabulary;
 
-import static sample.Static.vocabularyName;
+import static sample.staticUse.StaticVariables.vocabularyName;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**
@@ -40,10 +40,10 @@ public class AddController {
     }
 
     public void BackButtonAction() throws Exception {
-        sceneLoader(Constants.MENU_FXML_SOUBOR);
+        sceneLoader(Constants.MENU_FXML_FILE);
     }
 
     public void ChangeVocabularyButtonAction() throws Exception {
-        sceneLoader(Constants.SELECT_FXML_SOUBOR);
+        sceneLoader(Constants.SELECT_FXML_FILE);
     }
 }

@@ -7,9 +7,9 @@ import javafx.scene.control.TextField;
 import sample.Constants;
 import sample.vocabulary.Vocabulary;
 
-import static sample.Static.typeOfExam;
-import static sample.Static.vocabularyName;
-import static sample.Static.words;
+import static sample.staticUse.StaticVariables.typeOfExam;
+import static sample.staticUse.StaticVariables.vocabularyName;
+import static sample.staticUse.StaticVariables.words;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**
@@ -28,7 +28,7 @@ public class ExamPreparationController {
         Vocabulary vocabulary = new Vocabulary(vocabularyName);
         words = vocabulary.examPreparation(Integer.parseInt(wordCount.getText()));
         typeOfExam = "FLtoNL";
-        sceneLoader(Constants.EXAMINE_FXML_SOUBOR);
+        sceneLoader(Constants.EXAMINE_FXML_FILE);
     }
 
     public void nativeToForeignButtonAction() throws Exception{
@@ -45,6 +45,6 @@ public class ExamPreparationController {
             Platform.exit();
         }
         typeOfExam = "NLtoFL";
-        sceneLoader(Constants.EXAMINE_FXML_SOUBOR);
+        sceneLoader(Constants.EXAMINE_FXML_FILE);
     }
 }

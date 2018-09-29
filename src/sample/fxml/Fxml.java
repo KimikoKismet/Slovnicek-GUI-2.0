@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import sample.Main;
 
-import java.io.IOException;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Kimiko
