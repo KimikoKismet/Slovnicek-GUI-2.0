@@ -14,12 +14,12 @@ public class MenuController {
     public Button AddWordButton;
 
 
-    public void ShowVocabularyButtonAction() throws Exception {
+    public void ShowVocabularyButtonAction() {
         sceneLoader(Constants.SELECT_FXML_SOUBOR);
         nextStage = Constants.SHOW_FXML_SOUBOR;
     }
 
-    public void ExamineYourselfButtonAction() throws Exception {
+    public void ExamineYourselfButtonAction() {
         sceneLoader(Constants.SELECT_FXML_SOUBOR);
         nextStage = Constants.EXAM_PREPARATION_FXML_SOUBOR;
     }

@@ -29,12 +29,14 @@ public class Vocabulary {
      * vypíše slovíčko do slovníčku
      * @param word slovíčko, které chceme vypsat do slovníčku
      */
-    public void enterWord(String word) throws Exception {
-        FileWriter fw;
-        fw = new FileWriter(fileName, true);
-        fw.write(word+"\n");
-        fw.flush();
-        fw.close();
+    public boolean enterWord(String word) {
+        try(FileWriter fw = new FileWriter(fileName, true)){
+            fw.write(word+"\n");
+            fw.flush();
+            return true;
+        } catch(Exception e) {
+            return false;
+        }
     }
 
     public ArrayList<String> viewVocabulary() {
@@ -53,39 +55,45 @@ public class Vocabulary {
         return vocabulary;
     }
 
-    public String[] examPreparation(int wordCount) throws Exception {
+    public String[] examPreparation(int wordCount) {
         String[] exam = new String[wordCount];
+        if (getExamListOfVocabulary() == null) {
+            return new String[1];
+        }
         for (int j = 0; j<wordCount; j++) {
             int x = (int)(Math.random()*getWordCountInVocabulary());
+
             exam[j] = getExamListOfVocabulary()[x];
         }
         return exam;
     }
 
-    public int getWordCountInVocabulary() throws Exception {
-        br = new BufferedReader(new FileReader(fileName));
+    public int getWordCountInVocabulary()  {
         int wordCountInVocabulary = 0;
-
-        while ((line=br.readLine())!=null) {
-            wordCountInVocabulary++;
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            while ((line=br.readLine())!=null) {
+                wordCountInVocabulary++;
+            }
+        } catch (Exception e) {
+            wordCountInVocabulary = -1;
         }
-
-        br.close();
-
         return wordCountInVocabulary;
     }
 
-    public String[] getExamListOfVocabulary() throws Exception {
+    public String[] getExamListOfVocabulary() {
+        if (getWordCountInVocabulary() == -1) {
+            return null;
+        }
         String[] words = new String[getWordCountInVocabulary()];
         int i = 0;
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
+            while ((line=br.readLine())!=null) {
+                words[i] = line;
+                i++;
+            }
+        } catch (Exception e) {
 
-        br = new BufferedReader(new FileReader(fileName));
-        while ((line=br.readLine())!=null) {
-            words[i] = line;
-            i++;
         }
-        br.close();
-
         return words;
     }
 

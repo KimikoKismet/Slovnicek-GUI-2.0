@@ -22,17 +22,20 @@ public class AddController {
     public TextField NativeLanguageText;
 
 
-    public void AddWordButtonAction() throws Exception {
+    public void AddWordButtonAction() {
         addWord();
     }
 
-    private void addWord() throws Exception {
+    private void addWord() {
         Vocabulary vocabulary = new Vocabulary(vocabularyName);
         String word = ForeignLanguageText.getText() + " " + NativeLanguageText.getText();
         if ((ForeignLanguageText.getText().length() > 1) && (NativeLanguageText.getText().length() > 0)) {
-            vocabulary.enterWord(word);
-            ForeignLanguageText.setText("");
-            NativeLanguageText.setText("");
+            if (vocabulary.enterWord(word)) {
+                ForeignLanguageText.setText("");
+                NativeLanguageText.setText("");
+            } else {
+
+            }
         }
     }
 

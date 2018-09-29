@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.net.URI;
+
 public class Main extends Application {
     public static Stage stage;
 
@@ -16,7 +18,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/menu.fxml"));
         primaryStage.setTitle("Slovníček");
         primaryStage.setScene(new Scene(root,400, 400));
-        primaryStage.getIcons().add(new Image("https://cdn2.iconfinder.com/data/icons/translation-1/513/translation-translate-language-international-translating_2_copy_13-512.png"));
+        primaryStage.getIcons().add(new Image(System.getProperty("user.dir")+"\\Images\\Icon.png"));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
