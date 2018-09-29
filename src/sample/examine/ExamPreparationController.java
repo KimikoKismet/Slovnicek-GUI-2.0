@@ -4,12 +4,12 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import sample.Constants;
+import sample.global.Constants;
 import sample.vocabulary.Vocabulary;
 
-import static sample.staticUse.StaticVariables.typeOfExam;
-import static sample.staticUse.StaticVariables.vocabularyName;
-import static sample.staticUse.StaticVariables.words;
+import static sample.global.StaticVariables.typeOfExam;
+import static sample.global.StaticVariables.vocabularyName;
+import static sample.global.StaticVariables.words;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**

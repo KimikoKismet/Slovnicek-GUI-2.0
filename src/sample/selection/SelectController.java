@@ -6,14 +6,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Tooltip;
-import sample.Constants;
+import sample.global.Constants;
 
-import static sample.staticUse.StaticVariables.nextStage;
-import static sample.staticUse.StaticVariables.nextStageForCreateVocabulary;
-import static sample.staticUse.StaticVariables.vocabularyName;
-import static sample.staticUse.StaticMethods.getLanguageList;
-import static sample.staticUse.StaticMethods.getPathToVocabulary;
-import static sample.staticUse.StaticMethods.getVocabularyList;
+import static sample.global.StaticVariables.nextStage;
+import static sample.global.StaticVariables.nextStageForCreateVocabulary;
+import static sample.global.StaticVariables.vocabularyName;
+import static sample.global.StaticMethods.getLanguageList;
+import static sample.global.StaticMethods.getPathToVocabulary;
+import static sample.global.StaticMethods.getVocabularyList;
 import static sample.fxml.Fxml.sceneLoader;
 
 
@@ -57,5 +57,9 @@ public class SelectController {
     public void createVocabularyButtonAction() {
         sceneLoader(Constants.CREATE_FXML_FILE);
         nextStageForCreateVocabulary = Constants.SELECT_FXML_FILE;
+    }
+
+    public void backButtonAction() {
+        sceneLoader(Constants.MENU_FXML_FILE);
     }
 }

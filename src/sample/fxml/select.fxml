@@ -2,7 +2,6 @@
 
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.selection.SelectController">
@@ -19,7 +18,12 @@
          </font>
       </Label>
       <ChoiceBox fx:id="vocabularyList" layoutX="50.0" layoutY="207.0" prefWidth="150.0" AnchorPane.bottomAnchor="168.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="200.0" />
-      <Button fx:id="createVocabularyButton" layoutX="14.0" layoutY="342.0" mnemonicParsing="false" onAction="#createVocabularyButtonAction" text="Create new vocabulary" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+      <Button fx:id="createVocabularyButton" layoutX="14.0" layoutY="342.0" mnemonicParsing="false" onAction="#createVocabularyButtonAction" prefHeight="52.0" prefWidth="130.0" text="Create new vocabulary" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="242.0" layoutY="328.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back to menu" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <font>
             <Font name="Bookman Old Style" size="16.0" />
          </font>

@@ -4,12 +4,13 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import sample.global.Errors;
 
 import java.io.File;
 
-import static sample.staticUse.StaticVariables.nextStageForCreateVocabulary;
-import static sample.staticUse.StaticMethods.getLanguageList;
-import static sample.staticUse.StaticMethods.getPathToVocabularyFolder;
+import static sample.global.StaticVariables.nextStageForCreateVocabulary;
+import static sample.global.StaticMethods.getLanguageList;
+import static sample.global.StaticMethods.getPathToVocabularyFolder;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**
@@ -54,8 +55,8 @@ public class CreateVocabularyController {
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error.03");
-            alert.setContentText("The creation of new file named " + nameOfVocabularyTextField.getText() + ".txt has failed.");
+            alert.setHeaderText(Errors.ERROR_04.getHeaderText());
+            alert.setContentText(Errors.ERROR_04.getContentText());
 
             alert.showAndWait();
             Platform.exit();

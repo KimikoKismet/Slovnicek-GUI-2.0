@@ -2,10 +2,10 @@ package sample.add;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import sample.Constants;
+import sample.global.Constants;
 import sample.vocabulary.Vocabulary;
 
-import static sample.staticUse.StaticVariables.vocabularyName;
+import static sample.global.StaticVariables.vocabularyName;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**

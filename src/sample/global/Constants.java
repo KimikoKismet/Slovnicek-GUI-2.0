@@ -1,4 +1,4 @@
-package sample;
+package sample.global;
 
 /**
  * Created by IntelliJ IDEA.

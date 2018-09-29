@@ -1,4 +1,4 @@
-package sample.staticUse;
+package sample.global;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,12 +12,12 @@ import java.util.ArrayList;
 public class StaticMethods {
 
     public static String getPathToVocabularyFolder(String language) {
-        String path = (System.getProperty("user.dir")) + "\\" + language + "\\";
+        String path = (System.getProperty("user.dir")) + "\\Vocabulary\\" + language + "\\";
         return path;
     }
 
     public static String getPathToVocabulary(String language, String vocabularyName) {
-        String path = (System.getProperty("user.dir")) + "\\" + language + "\\" + vocabularyName + ".txt";
+        String path = (System.getProperty("user.dir")) + "\\Vocabulary\\" + language + "\\" + vocabularyName + ".txt";
         return path;
     }
 

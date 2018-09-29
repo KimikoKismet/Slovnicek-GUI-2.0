@@ -1,5 +1,9 @@
 package sample.vocabulary;
 
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import sample.global.Errors;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -50,7 +54,13 @@ public class Vocabulary {
             }
             br.close();
         }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(Errors.ERROR_02.getHeaderText());
+            alert.setContentText(Errors.ERROR_02.getContentText());
 
+            alert.showAndWait();
+            Platform.exit();
         }
         return vocabulary;
     }
@@ -97,7 +107,7 @@ public class Vocabulary {
         return words;
     }
 
-    public String[] Separation(String word) {
+    public String[] separation(String word) {
         String[] result = word.split(" - ");
         return result;
     }
