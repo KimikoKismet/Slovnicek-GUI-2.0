@@ -28,7 +28,7 @@ public class AddController {
 
     private void addWord() {
         Vocabulary vocabulary = new Vocabulary(vocabularyName);
-        String word = ForeignLanguageText.getText() + " " + NativeLanguageText.getText();
+        String word = ForeignLanguageText.getText() + " - " + NativeLanguageText.getText();
         if ((ForeignLanguageText.getText().length() > 1) && (NativeLanguageText.getText().length() > 0)) {
             if (vocabulary.enterWord(word)) {
                 ForeignLanguageText.setText("");

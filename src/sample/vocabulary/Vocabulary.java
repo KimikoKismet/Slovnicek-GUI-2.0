@@ -98,7 +98,7 @@ public class Vocabulary {
     }
 
     public String[] Separation(String word) {
-        String[] result = word.split(" ");
+        String[] result = word.split(" - ");
         return result;
     }
 }

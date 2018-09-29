@@ -71,7 +71,7 @@ public class SelectController {
         return languageList;
     }
 
-    public void SelectButtonAction() throws Exception {
+    public void SelectButtonAction() {
         vocabularyName = System.getProperty("user.dir")+"\\Vocabulary\\" + ((String) LanguageList.getSelectionModel().getSelectedItem()) + "\\" + ((String) VocabularyList.getSelectionModel().getSelectedItem()) + ".txt";
         sceneLoader(nextStage);
     }
