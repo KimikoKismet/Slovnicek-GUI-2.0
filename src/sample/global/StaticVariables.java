@@ -12,6 +12,7 @@ public class StaticVariables {
     public static String nextStageForCreateVocabulary;
 
     public static String vocabularyName;
-    public static String[] words;
-    public static String typeOfExam;
+
+    public static int wordCount;
+    public static boolean translationToForeign;
 }
