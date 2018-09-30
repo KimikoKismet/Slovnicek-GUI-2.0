@@ -6,15 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Tooltip;
+import javafx.scene.layout.*;
 import sample.global.Constants;
 
-import static sample.global.StaticVariables.nextStage;
-import static sample.global.StaticVariables.nextStageForCreateVocabulary;
-import static sample.global.StaticVariables.vocabularyName;
-import static sample.global.StaticMethods.getLanguageList;
-import static sample.global.StaticMethods.getPathToVocabulary;
-import static sample.global.StaticMethods.getVocabularyList;
 import static sample.fxml.Fxml.sceneLoader;
+import static sample.global.StaticMethods.*;
+import static sample.global.StaticVariables.*;
 
 
 /**
@@ -28,9 +25,11 @@ public class SelectController {
     public Button selectButton;
     public ChoiceBox languageList;
     public Button createVocabularyButton;
+    public AnchorPane Pain;
 
     @FXML
     public void initialize() {
+        loadBackground(Pain);
 
         languageList.setItems(FXCollections.observableArrayList(getLanguageList()));
         languageList.setTooltip(new Tooltip("Select the language."));
@@ -49,7 +48,8 @@ public class SelectController {
     }
 
     public void selectButtonAction() {
-        vocabularyName = getPathToVocabulary( (String) languageList.getSelectionModel().getSelectedItem(), (String) vocabularyList.getSelectionModel().getSelectedItem() );
+        vocabularyName = vocabularyList.getSelectionModel().getSelectedItem() + ".txt";
+        vocabularyPath = getPathToVocabulary( (String) languageList.getSelectionModel().getSelectedItem(), (String) vocabularyList.getSelectionModel().getSelectedItem() );
         sceneLoader(nextStage);
     }
 

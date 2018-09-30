@@ -11,8 +11,9 @@ public class StaticVariables {
     public static String nextStage;
     public static String nextStageForCreateVocabulary;
 
+    public static String vocabularyPath;
     public static String vocabularyName;
 
     public static int wordCount;
-    public static boolean translationToForeign;
+    public static boolean translationToNative;
 }

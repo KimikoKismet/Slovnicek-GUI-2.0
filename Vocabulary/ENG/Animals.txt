@@ -1,1 +1,8 @@
 dog - pes
+cat - kočka
+mouse - myš
+snake - had
+rattlesnake - chřestýš
+bird - pták
+goose - husa
+spider - pavouk

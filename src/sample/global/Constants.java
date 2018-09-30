@@ -16,4 +16,6 @@ public class Constants {
     public static final String EXAM_PREPARATION_FXML_FILE = "examPreparation.fxml";
     public static final String CREATE_FXML_FILE = "create.fxml";
 
+    public static final String PATH_TO_PROGRAM_FOLDER = System.getProperty("user.dir");
+
 }

@@ -2,9 +2,11 @@ package sample.examine;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.*;
 import sample.global.Constants;
 
 import static sample.fxml.Fxml.sceneLoader;
+import static sample.global.StaticMethods.loadBackground;
 import static sample.global.StaticVariables.*;
 
 /**
@@ -18,16 +20,21 @@ public class ExamPreparationController {
     public Button foreignToNativeButton;
     public Button nativeToForeignButton;
     public TextField wordCountTextField;
+    public AnchorPane Pain;
+
+    public void initialize() {
+        loadBackground(Pain);
+    }
 
     public void foreignToNativeButtonAction() {
-        translationToForeign = true;
-        sceneLoader(Constants.EXAMINE_FXML_FILE);
+        translationToNative = true;
         wordCount = Integer.parseInt(wordCountTextField.getText());
+        sceneLoader(Constants.EXAMINE_FXML_FILE);
     }
 
     public void nativeToForeignButtonAction() {
-        translationToForeign = false;
-        sceneLoader(Constants.EXAMINE_FXML_FILE);
+        translationToNative = false;
         wordCount = Integer.parseInt(wordCountTextField.getText());
+        sceneLoader(Constants.EXAMINE_FXML_FILE);
     }
 }

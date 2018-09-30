@@ -1,16 +1,15 @@
 package sample.create;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import sample.global.Errors;
 
 import java.io.File;
 
+import static sample.global.StaticMethods.*;
 import static sample.global.StaticVariables.nextStageForCreateVocabulary;
-import static sample.global.StaticMethods.getLanguageList;
-import static sample.global.StaticMethods.getPathToVocabularyFolder;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**
@@ -25,22 +24,23 @@ public class CreateVocabularyController {
     public Button backButton;
     public TextField nameOfVocabularyTextField;
     public ChoiceBox languageChoiceBox;
+    public AnchorPane Pain;
 
     @FXML
     private void initialize() {
+        loadBackground(Pain);
+        
         languageChoiceBox.setItems(FXCollections.observableArrayList(getLanguageList()));
         languageChoiceBox.setTooltip(new Tooltip("Select the language."));
         languageChoiceBox.getSelectionModel().selectFirst();
     }
 
     public void createVocabularyButtonAction() {
-        if (!createNewTextFile(getPathToVocabularyFolder((String) languageChoiceBox.getSelectionModel().getSelectedItem())))  {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("File with named " + nameOfVocabularyTextField.getText() + ".txt could not be created. File named " + nameOfVocabularyTextField.getText() + ".txt already exists.");
-
-            alert.showAndWait();
+        if (createNewTextFile(getPathToVocabularyFolder((String) languageChoiceBox.getSelectionModel().getSelectedItem())))  {
+            getInformationDialog("File named " + nameOfVocabularyTextField.getText() + ".txt has been successfully created.");
+            nameOfVocabularyTextField.setText("");
+        } else {
+            getInformationDialog("File named " + nameOfVocabularyTextField.getText() + ".txt could not be created. File named " + nameOfVocabularyTextField.getText() + ".txt already exists.");
         }
     }
 
@@ -53,14 +53,8 @@ public class CreateVocabularyController {
             vocabulary.createNewFile();
             return true;
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(Errors.ERROR_04.getHeaderText());
-            alert.setContentText(Errors.ERROR_04.getContentText());
-
-            alert.showAndWait();
-            Platform.exit();
-
+            e.printStackTrace();
+            Errors.ERROR_04.getErrorDialog();
             return false;
         }
     }

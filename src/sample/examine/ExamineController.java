@@ -1,14 +1,15 @@
 package sample.examine;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.*;
 import sample.global.Constants;
 import sample.vocabulary.Vocabulary;
 
 import static sample.fxml.Fxml.sceneLoader;
+import static sample.global.StaticMethods.loadBackground;
 import static sample.global.StaticVariables.*;
 
 /**
@@ -25,20 +26,23 @@ public class ExamineController {
     public TextField translationTextField;
     public Label statusLabel;
 
-    private Vocabulary vocabulary;
+    public Vocabulary vocabulary;
+    public AnchorPane Pain;
     private String[] words;
     private int wordIndex;
 
     @FXML
     public void initialize() {
-        vocabulary = new Vocabulary(vocabularyName);
+        loadBackground(Pain);
+        
+        vocabulary = new Vocabulary(vocabularyPath);
         words = vocabulary.examPreparation(wordCount);
         wordIndex = 0;
         String[] word = vocabulary.separation(words[wordIndex]);
 
         wordCountLabel.setText("" + wordCount);
 
-        if (translationToForeign) {
+        if (translationToNative) {
             wordForTranslate.setText(word[0]);
         } else {
             wordForTranslate.setText(word[1]);
@@ -47,29 +51,39 @@ public class ExamineController {
 
     //TODO checkButtonAction()
     public void checkButtonAction() {
-        String answer = translationTextField.getText();
+        check();
+    }
+
+    private boolean check() {
         String[] word = vocabulary.separation(words[wordIndex]);
         String foreignWord = word[0];
         String nativeWord = word[1];
-        if (translationToForeign) {
-            if (answer.compareTo(nativeWord) == 0) {
-                statusLabel.setText("OK. GOOD JOB.");
-            } else {
-                statusLabel.setText("KO. TRY AGAIN.");
-            }
+        if (translationToNative) {
+            return comparison(nativeWord);
         }
         else {
-            if (answer.compareTo(foreignWord) == 0) {
-                statusLabel.setText("OK. GOOD JOB.");
-            } else {
-                statusLabel.setText("KO. TRY AGAIN.");
-            }
+            return comparison(foreignWord);
+        }
+    }
+
+    private boolean comparison(String comparingWord) {
+        String answer = translationTextField.getText();
+        if (answer.compareTo(comparingWord) == 0) {
+            statusLabel.setText("OK. GOOD JOB.");
+            return true;
+        } else {
+            statusLabel.setText("KO. TRY AGAIN.");
+            return false;
         }
     }
 
     public void newExamButtonAction() {
-        nextStage = Constants.EXAM_PREPARATION_FXML_FILE;
-        sceneLoader(Constants.SELECT_FXML_FILE);
+        if (check()) {
+            nextStage = Constants.EXAM_PREPARATION_FXML_FILE;
+            sceneLoader(Constants.SELECT_FXML_FILE);
+        } else {
+
+        }
     }
 
     public void backButtonAction() {
@@ -81,7 +95,7 @@ public class ExamineController {
         wordIndex++;
         wordCountLabel.setText("" + (wordCount - wordIndex));
         String[] word = vocabulary.separation(words[wordIndex]);
-        if (translationToForeign) {
+        if (translationToNative) {
             wordForTranslate.setText(word[0]);
         } else {
             wordForTranslate.setText(word[1]);

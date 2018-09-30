@@ -4,9 +4,9 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import sample.global.Errors;
 import sample.Main;
+
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,13 +24,8 @@ public class Fxml {
             Main.stage.show();
 
         } catch(Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(Errors.ERROR_01.getHeaderText());
-            alert.setContentText(Errors.ERROR_01.getContentText());
-
-            alert.showAndWait();
-
+            e.printStackTrace();
+            Errors.ERROR_01.getErrorDialog();
             Platform.exit();
         }
 

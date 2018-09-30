@@ -1,5 +1,8 @@
 package sample.global;
 
+import javafx.scene.control.Alert;
+import sample.Main;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Kimiko
@@ -20,11 +23,13 @@ public enum Errors {
         this.contentText = contentText;
     }
 
-    public String getHeaderText() {
-        return headerText;
-    }
+    public void getErrorDialog() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.initOwner(Main.stage);
+        alert.setTitle("Error");
+        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
 
-    public String getContentText() {
-        return contentText;
+        alert.showAndWait();
     }
 }

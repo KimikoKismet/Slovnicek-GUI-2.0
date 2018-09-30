@@ -2,10 +2,12 @@ package sample.add;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.*;
 import sample.global.Constants;
 import sample.vocabulary.Vocabulary;
 
-import static sample.global.StaticVariables.vocabularyName;
+import static sample.global.StaticMethods.loadBackground;
+import static sample.global.StaticVariables.vocabularyPath;
 import static sample.fxml.Fxml.sceneLoader;
 
 /**
@@ -20,14 +22,18 @@ public class AddController {
     public Button ChangeVocabularyButton;
     public TextField ForeignLanguageText;
     public TextField NativeLanguageText;
+    public AnchorPane Pain;
 
-
+    public void initialize() {
+        loadBackground(Pain);
+    }
+    
     public void AddWordButtonAction() {
         addWord();
     }
 
     private void addWord() {
-        Vocabulary vocabulary = new Vocabulary(vocabularyName);
+        Vocabulary vocabulary = new Vocabulary(vocabularyPath);
         String word = ForeignLanguageText.getText() + " - " + NativeLanguageText.getText();
         if ((ForeignLanguageText.getText().length() > 1) && (NativeLanguageText.getText().length() > 0)) {
             if (vocabulary.enterWord(word)) {

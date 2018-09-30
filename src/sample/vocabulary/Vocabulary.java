@@ -54,12 +54,7 @@ public class Vocabulary {
             }
             br.close();
         }catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(Errors.ERROR_02.getHeaderText());
-            alert.setContentText(Errors.ERROR_02.getContentText());
-
-            alert.showAndWait();
+            Errors.ERROR_02.getErrorDialog();
             Platform.exit();
         }
         return vocabulary;

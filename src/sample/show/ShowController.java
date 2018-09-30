@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.*;
 import sample.global.Constants;
 import sample.global.Errors;
 import sample.vocabulary.Vocabulary;
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static sample.fxml.Fxml.sceneLoader;
-import static sample.global.StaticVariables.vocabularyName;
+import static sample.global.StaticMethods.loadBackground;
+import static sample.global.StaticVariables.vocabularyPath;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,11 +29,16 @@ public class ShowController {
     public Button backButton;
     public Label wordCountLabel;
     public TableView table;
+    public AnchorPane Pain;
+
+    //TODO wordcount
 
     @FXML
     private void initialize() {
+        loadBackground(Pain);
+
         ArrayList<String> wordsList;
-        Vocabulary vocabulary = new Vocabulary(vocabularyName);
+        Vocabulary vocabulary = new Vocabulary(vocabularyPath);
         wordsList = vocabulary.viewVocabulary();
         List list = new ArrayList();
 
@@ -43,13 +50,7 @@ public class ShowController {
             try {
                 list.add(new Word(words[0], words[1]));
             } catch (IndexOutOfBoundsException e ) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(Errors.ERROR_03.getHeaderText());
-                alert.setContentText(Errors.ERROR_03.getContentText());
-
-                alert.showAndWait();
-
+                Errors.ERROR_03.getErrorDialog();
                 list = new ArrayList();
                 break;
             }

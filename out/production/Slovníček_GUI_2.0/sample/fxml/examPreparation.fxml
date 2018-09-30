@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.examine.ExamPreparationController">
+<AnchorPane fx:id="Pain" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.examine.ExamPreparationController">
    <children>
       <Button fx:id="nativeToForeignButton" layoutX="50.0" layoutY="349.0" mnemonicParsing="false" onAction="#nativeToForeignButtonAction" text="Native language to foreign language" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="48.0">
          <font>
             <Font name="Bookman Old Style" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="foreignToNativeButton" layoutX="48.0" layoutY="312.0" mnemonicParsing="false" onAction="#languageToForeignButtonAction" text="Foreing language to native language" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="47.0">
+      <Button fx:id="foreignToNativeButton" layoutX="48.0" layoutY="312.0" mnemonicParsing="false" onAction="#foreignToNativeButtonAction" text="Foreing language to native language" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="47.0">
          <font>
             <Font name="Bookman Old Style" size="16.0" />
          </font>
@@ -23,6 +23,6 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="wordCount" layoutX="204.0" layoutY="106.0"  />
+      <TextField fx:id="wordCountTextField" layoutX="204.0" layoutY="106.0"  />
    </children>
 </AnchorPane>

@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.examine.ExamineController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="Pain" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.examine.ExamineController">
+   <children>
+      <Label layoutX="20.0" layoutY="216.0" text="Words left:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="wordCountLabel" layoutX="329.0" layoutY="27.0" prefHeight="25.0" prefWidth="50.0" text="00" textAlignment="RIGHT" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="wordForTranslate" layoutX="54.0" layoutY="96.0" prefHeight="30.0" prefWidth="240.0" text="Word" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font name="Bookman Old Style" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="checkButton" layoutX="288.0" layoutY="96.0" mnemonicParsing="false" onAction="#checkButtonAction" text="Check" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="translationTextField" layoutX="54.0" layoutY="151.0" prefHeight="30.0" prefWidth="240.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0" />
+      <Label fx:id="statusLabel" layoutX="20.0" layoutY="210.0" text="Checked" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="210.0">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="288.0" layoutY="336.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back to menu" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="newExamButton" layoutX="14.0" layoutY="349.0" mnemonicParsing="false" onAction="#newExamButtonAction" text="New exam" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="nextWordButton" layoutX="288.0" layoutY="167.0" mnemonicParsing="false" onAction="#nextWordButtonAction" prefHeight="67.0" prefWidth="90.0" text="Next word" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="165.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

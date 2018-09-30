@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.examine.ExamPreparationController">
+<AnchorPane fx:id="Pain" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.examine.ExamPreparationController">
    <children>
       <Button fx:id="nativeToForeignButton" layoutX="50.0" layoutY="349.0" mnemonicParsing="false" onAction="#nativeToForeignButtonAction" text="Native language to foreign language" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="48.0">
          <font>

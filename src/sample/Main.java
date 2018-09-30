@@ -16,7 +16,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("fxml/menu.fxml"));
-
         primaryStage.setTitle("Slovníček");
         primaryStage.setScene(new Scene(root,400, 400));
         primaryStage.setResizable(false);

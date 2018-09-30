@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.create.CreateVocabularyController">
+<AnchorPane fx:id="Pain" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.create.CreateVocabularyController">
    <children>
       <Button fx:id="createVocabularyButton" layoutX="129.0" layoutY="238.0" mnemonicParsing="false" onAction="#createVocabularyButtonAction" text="Create new vocabulary" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="240.0">
          <font>
