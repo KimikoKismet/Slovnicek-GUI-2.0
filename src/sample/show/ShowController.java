@@ -16,6 +16,7 @@ import java.util.List;
 import static sample.fxml.Fxml.sceneLoader;
 import static sample.global.StaticMethods.loadBackground;
 import static sample.global.StaticVariables.vocabularyPath;
+import static sample.global.StaticVariables.wordCount;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,11 +32,10 @@ public class ShowController {
     public TableView table;
     public AnchorPane Pain;
 
-    //TODO wordcount
-
     @FXML
     private void initialize() {
         loadBackground(Pain);
+        wordCount = 0;
 
         ArrayList<String> wordsList;
         Vocabulary vocabulary = new Vocabulary(vocabularyPath);
@@ -49,6 +49,7 @@ public class ShowController {
             String[] words = vocabulary.separation(word);
             try {
                 list.add(new Word(words[0], words[1]));
+                wordCount++;
             } catch (IndexOutOfBoundsException e ) {
                 Errors.ERROR_03.getErrorDialog();
                 list = new ArrayList();
@@ -56,6 +57,7 @@ public class ShowController {
             }
         }
 
+        wordCountLabel.setText("" + wordCount);
         table.setItems(FXCollections.observableList(list));
     }
 

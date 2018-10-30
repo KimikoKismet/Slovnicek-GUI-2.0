@@ -40,6 +40,11 @@ public class StaticMethods {
         return languageList;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public static ArrayList<String> getVocabularyList(String name) {
         File CurrentDirectory = new File(Constants.PATH_TO_PROGRAM_FOLDER + "\\Vocabulary\\" + name);
         String[] listOfTextFiles = CurrentDirectory.list();
@@ -50,6 +55,10 @@ public class StaticMethods {
         return vocabularyList;
     }
 
+    /**
+     * vytvoří informační dialog
+     * @param contentText informace, kterou chceme sdělit
+     */
     public static void getInformationDialog(String contentText) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.initOwner(Main.stage);
@@ -59,6 +68,11 @@ public class StaticMethods {
 
         alert.showAndWait();
     }
+
+    /**
+     * načte pozadí ka danému oknu
+     * @param Pain dané okno
+     */
     public static void loadBackground(AnchorPane Pain) {
         Image image = loadImage("Background.jpg");
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
@@ -69,7 +83,7 @@ public class StaticMethods {
 
     /**
      * načte obrázek z daného souboru
-     * @param nazevSouboru název souboru, kde se nachízí obrázek
+     * @param nazevSouboru název souboru, kde se nachází obrázek
      * @return daný obrázek
      */
     public static Image loadImage(String nazevSouboru) {
